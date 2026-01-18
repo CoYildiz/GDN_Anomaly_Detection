@@ -1,0 +1,162 @@
+============================================================
+   WADI & SWaT VERİ ÖN İŞLEME
+============================================================
+
+==================================================
+ SWaT İŞLENİYOR
+==================================================
+
+    [TRAIN] Okunuyor:  SWaT_normal.csv
+       Ham veri boyutu: (1387098, 53)
+       İlk 5 sütun:  ['Timestamp', 'FIT101', 'LIT101', 'MV101', 'P101']
+       SWaT Train:  Tamamı Normal (0)
+       Saldırı Oranı: %0.00
+       Downsampling...  Orjinal: (1387098, 51)
+       ✅ Kaydedildi: train.csv
+       Final Boyut: (136549, 52)
+       Final Normal: 136549 | Attack: 0
+       Final Attack Oranı: %0.00
+
+    [TEST] Okunuyor:  merged.csv
+       Ham veri boyutu: (1441719, 53)
+       İlk 5 sütun:  ['Timestamp', 'FIT101', 'LIT101', 'MV101', 'P101']
+       SWaT Test: Normal/Attack sütunundan label alındı
+       Saldırı Oranı: %3.79
+       Downsampling...  Orjinal: (1441719, 51)
+       ✅ Kaydedildi: test.csv
+       Final Boyut: (142011, 52)
+       Final Normal: 136549 | Attack: 5462
+       Final Attack Oranı: %3.85
+
+==================================================
+ WADI İŞLENİYOR
+==================================================
+
+    [TRAIN] Okunuyor:  WADI_14days.csv
+       Ham veri boyutu: (1209601, 130)
+       İlk 5 sütun:  ['Row', 'Date', 'Time', '1_AIT_001_PV', '1_AIT_002_PV']
+       WADI Train: Etiket sütunu yok, hepsi '0' (Normal)
+       Saldırı Oranı: %0.00
+       Downsampling...  Orjinal: (1209601, 123)
+       ✅ Kaydedildi: wadi_train.csv
+       Final Boyut: (118800, 124)
+       Final Normal: 118800 | Attack: 0
+       Final Attack Oranı: %0.00
+
+    [TEST] Okunuyor:  WADI_attackdata.csv
+       Ham veri boyutu: (172801, 130)
+       İlk 5 sütun:  ['Row', 'Date', 'Time', '1_AIT_001_PV', '1_AIT_002_PV']
+       WADI Test:  Etiketler zaman tablosundan oluşturuluyor...
+       Zaman sütunları bulundu: 'Date', 'Time'
+       İlk timestamp: 2017-10-09 18:00:00
+       Son timestamp: 2017-10-11 18:00:00
+       ✅ Etiketler oluşturuldu:
+          Normal: 162816
+          Attack: 9985
+          Oran: %5.78 attack
+       Saldırı Oranı: %5.78
+       Downsampling...  Orjinal: (172801, 123)
+       ✅ Kaydedildi: wadi_test.csv
+       Final Boyut: (15120, 124)
+       Final Normal: 14262 | Attack: 858
+       Final Attack Oranı: %5.67
+
+============================================================
+   İŞLEM TAMAMLANDI!
+============================================================
+
+
+
+
+
+
+
+(.venv1)  co@pop-os  ~/Projects/gdnall/GDN_Project-main  python3 evaluate.py
+  Ayarlar Yüklendi: SWaT | Dim: 64 | TopK: 15
+--- FİNAL MODEL ANALİZİ: SWaT ---
+Veri Yüklendi. Sensör Sayısı: 51
+ Model Ağırlıkları Yüklendi.
+ Hatalar hesaplanıyor (Bu işlem veri boyutuna göre sürebilir)...
+    İstatistikler - Median: 0.0967, IQR: 0.1104
+
+ SONUÇLAR (Eşik: 1419128.5696)
+------------------------------
+F1-Score      : 0.6893
+Precision     : 0.7945
+Recall        : 0.6088
+------------------------------
+Confusion Matrix:
+[[135684    860]
+ [  2137   3325]]
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Activate DRI3 at Xorg or build mesa with DRI2
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Activate DRI3 at Xorg or build mesa with DRI2
+
+(process:13413): Gtk-WARNING **: 21:24:30.722: Theme parser error: gtk.css:4555:21-31: Expected a valid color.
+
+(process:13413): Gtk-WARNING **: 21:24:30.722: Theme parser error: gtk.css:4559:21-31: Expected a valid color.
+
+(process:13413): Gtk-WARNING **: 21:24:30.722: Theme parser error: gtk.css:4563:21-31: Expected a valid color.
+ Grafik 'final_analysis_SWaT.png' olarak kaydedildi.
+(.venv1)  co@pop-os  ~/Projects/gdnall/GDN_Project-main  
+
+
+
+
+Veri Yükleniyor: WADI...
+
+ EĞİTİM BAŞLIYOR (20 Epoch)...
+Epoch 1/20 | Train Loss: 0.40214 | Val Loss: 400.39931
+Epoch 2/20 | Train Loss: 0.31983 | Val Loss: 335.42391
+Epoch 3/20 | Train Loss: 0.30459 | Val Loss: 323.19963
+Epoch 4/20 | Train Loss: 0.30044 | Val Loss: 392.46570
+Epoch 5/20 | Train Loss: 0.30227 | Val Loss: 336.03120
+Epoch 6/20 | Train Loss: 0.29664 | Val Loss: 355.10743
+Epoch 7/20 | Train Loss: 0.29313 | Val Loss: 405.92826
+Epoch 8/20 | Train Loss: 0.29140 | Val Loss: 388.43334
+Epoch 9/20 | Train Loss: 0.29035 | Val Loss: 402.69191
+Epoch 10/20 | Train Loss: 0.28921 | Val Loss: 389.72069
+Epoch 11/20 | Train Loss: 0.29069 | Val Loss: 356.88759
+Epoch 12/20 | Train Loss: 0.28624 | Val Loss: 354.36045
+Epoch 13/20 | Train Loss: 0.28539 | Val Loss: 304.13621
+Epoch 14/20 | Train Loss: 0.28605 | Val Loss: 380.02304
+Epoch 15/20 | Train Loss: 0.28459 | Val Loss: 305.93079
+Epoch 16/20 | Train Loss: 0.28089 | Val Loss: 398.24067
+Epoch 17/20 | Train Loss: 0.28070 | Val Loss: 343.53524
+Epoch 18/20 | Train Loss: 0.28094 | Val Loss: 263.96930
+Epoch 19/20 | Train Loss: 0.27996 | Val Loss: 256.74562
+Epoch 20/20 | Train Loss: 0.27947 | Val Loss: 294.02784
+
+Eğitim Tamamlandı! Model: 'models/best_WADI.pt'
+(.venv1)  co@pop-os  ~/Projects/gdnall/GDN_Project-main  python3 evaluate.py   
+ Ayarlar: WADI | Dim: 128 | TopK: 30
+--- DETAYLI MODEL ANALİZİ: WADI ---
+ Model yüklendi.
+ Hatalar hesaplanıyor...
+
+--- EN İYİ EŞİK DEĞERİ ARANIYOR ---
+Bulunan En İyi Eşik: 20085.4650
+
+========================================
+ SONUÇLAR (RAW / HAM)
+========================================
+F1-Score  : 0.4378
+Precision : 0.6748
+Recall    : 0.3240
+AUC       : 0.6270
+----------------------------------------
+Confusion Matrix:
+[[14123   134]
+ [  580   278]]
+
+========================================
+ SONUÇLAR (POINT ADJUSTMENT)
+ (Anomali aralığının bir kısmı yakalanırsa tam puan)
+========================================
+F1-Score  : 0.5939
+Precision : 0.7577
+Recall    : 0.4883
+----------------------------------------
+
+

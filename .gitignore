@@ -1,0 +1,19 @@
+# Sanal Ortam
+.venv1/
+venv/
+env/
+
+# Python Önbellekleri
+__pycache__/
+*.pyc
+
+# Veri Dosyaları (GitHub'a yüklenmez, çok büyükler)
+data/*.csv
+data/*.xlsx
+data/*.xls
+
+# Eğitilmiş Modeller (İstersen yükleyebilirsin ama genelde büyük olur)
+models/*.pt
+
+# Sistem Dosyaları
+.DS_Store
