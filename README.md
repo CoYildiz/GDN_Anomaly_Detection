@@ -10,12 +10,6 @@ Bu proje, Graph Neural Networks (GNN) kullanarak siber-fiziksel sistemlerde (SWa
 
 ## Kurulum
 
-1. Depoyu klonlayın:
-   ```bash
-   git clone [https://github.com/KULLANICI_ADIN/REPO_ADIN.git](https://github.com/KULLANICI_ADIN/REPO_ADIN.git)
-   cd REPO_ADIN
-   
-   Gereksinimleri yükleyin:
 Bash
 
     pip install -r requirements.txt
